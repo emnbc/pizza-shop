@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav'; 
+import { MatSidenav } from '@angular/material/sidenav';
 import { ReplaySubject } from 'rxjs'
 import { takeUntil } from 'rxjs/operators';
 

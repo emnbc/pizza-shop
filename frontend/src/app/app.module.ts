@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HeaderModule } from './core/header/header.module';
 import { FooterModule } from './core/footer/footer.module';
-import { MainModule } from './pages/main/main.module';
+import { MaterialModule } from './shared/material.module';
+// import { MainModule } from './pages/main/main.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MainModule } from './pages/main/main.module';
     SharedModule,
     HeaderModule,
     FooterModule,
-    MainModule
+    MaterialModule,
+    // MainModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
