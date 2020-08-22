@@ -42,8 +42,7 @@ export class AuthService {
   checkAuthorization(): Observable<boolean>  {
     if(this.user$.getValue().id) {
       return of(true);
-    }
-    if(this.token) {
+    } else if(this.token) {
       return this.http.find<User>('auth/me').pipe(map(res => {
         if(res.body && res.body.id) {
           this.user$.next(new User(res.body));

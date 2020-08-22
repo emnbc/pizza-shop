@@ -1,4 +1,4 @@
-.container {
+.main-container {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -15,4 +15,32 @@
         z-index: 5;
         border-top: solid 1px rgba(0,0,0,.12);
     }
+}
+
+// :host {
+//     display: flex;
+//     height: 100%;
+// }
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    &__sidenav-drawer {
+        width: 270px;
+    }
+    &__sidenav-content {
+        width: 100%;
+        padding: 16px 0;
+    }
+    &__list-divider {
+        margin: 8px 0 0;
+        height: 0;
+        border: none;
+        border-bottom: 1px solid rgba(0,0,0,.12);
+    }
+}
+
+.mat-nav-list a.active {
+    background: rgba(0,0,0,.1);
 }

@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-between">
+    <mat-form-field>
+        <mat-label>Sorting</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-button-toggle-group class="mb-4" name="currency" aria-label="Currency">
+        <mat-button-toggle value="euro">Euro</mat-button-toggle>
+        <mat-button-toggle value="dollar">Dollar</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+    <div class="col mb-4"><product-item></product-item></div>
+    <div class="col mb-4"><product-item></product-item></div>
+    <div class="col mb-4"><product-item></product-item></div>
+    <div class="col mb-4"><product-item></product-item></div>
+    <div class="col mb-4"><product-item></product-item></div>
+    <div class="col mb-4"><product-item></product-item></div>
+</div>

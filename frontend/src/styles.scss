@@ -28,3 +28,9 @@ body {
         margin-right: 8px !important;
     }
 }
+
+button {
+    &:focus {
+        outline: none;
+    }
+}
