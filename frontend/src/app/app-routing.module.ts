@@ -5,6 +5,11 @@ import { CheckAuthGuard } from './guards/check-auth.guard';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
     path: 'welcome',
     loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule),
     canLoad: [IsNotAuthGuard]

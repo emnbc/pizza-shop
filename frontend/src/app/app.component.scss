@@ -1,4 +1,4 @@
-.container {
+.main-container {
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -30,7 +30,8 @@
         width: 270px;
     }
     &__sidenav-content {
-        padding: 16px;
+        width: 100%;
+        padding: 16px 0;
     }
     &__list-divider {
         margin: 8px 0 0;
