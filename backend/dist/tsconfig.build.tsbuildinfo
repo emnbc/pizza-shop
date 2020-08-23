@@ -3767,7 +3767,7 @@
         "affectsGlobalScope": false
       },
       "../src/rest/pizzas/pizzas.controller.ts": {
-        "version": "b8405bee1a4c4ccb5ec496265628018711441399876ecf2563e03a4a4aa19d2f",
+        "version": "24ecf30ed79a1fa9cfd5ad67c135f79e38f63404599d888dca4d1de9f07aaad9",
         "signature": "9df5625ff5d496c527a3d22b5eb67d29463937769993475695346b23beb5f261",
         "affectsGlobalScope": false
       },
