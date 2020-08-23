@@ -18,7 +18,7 @@ export class Pizza {
   @Column()
   count: number;
 
-  @Column({type: "money"})
+  @Column({type: "real"})
   price: number;
   
 }

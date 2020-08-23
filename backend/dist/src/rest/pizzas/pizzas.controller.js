@@ -25,8 +25,10 @@ let PizzasController = (() => {
         create(pizzaData) {
             return this.pizzasService.create(pizzaData);
         }
-        findAll(req) {
-            return this.pizzasService.findAll(req.qs);
+        async findAll(req) {
+            const ar = await this.pizzasService.findAll(req.qs);
+            console.log(ar);
+            return ar;
         }
     };
     __decorate([

@@ -35,7 +35,7 @@ let Pizza = (() => {
         __metadata("design:type", Number)
     ], Pizza.prototype, "count", void 0);
     __decorate([
-        typeorm_1.Column({ type: "money" }),
+        typeorm_1.Column({ type: "real" }),
         __metadata("design:type", Number)
     ], Pizza.prototype, "price", void 0);
     Pizza = __decorate([

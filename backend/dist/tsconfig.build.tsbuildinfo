@@ -1441,9 +1441,9 @@
         "signature": "9c7a638af5bd5667eea0496717b8232ab4f347a44905cdfd189fbfc692cb6831",
         "affectsGlobalScope": false
       },
-      "../migrations/1598198959086-addpizzadoubletypeentity.ts": {
-        "version": "c74a1458ef939680e24faa0ea40e363c9b3ca4ce23ce6aadde75d09d79ae76a1",
-        "signature": "f3c6c6e775c4e17b6293df44f77492a3b76e7497355061a0f3a82b017535f72c",
+      "../migrations/1598204904192-addpizzanumerictypeentity.ts": {
+        "version": "6ff3e85bd087c22e94d9a740f01de2ee7077ce1c85703897cf6d6175d5dc8044",
+        "signature": "71556506c57be0042b6deb50897badfb7c97261e3cf66d12cd546c2218879457",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts": {
@@ -3752,7 +3752,7 @@
         "affectsGlobalScope": false
       },
       "../src/entities/pizza.entity.ts": {
-        "version": "feaac92894170c658fae835442fab1235d69938df9f30d9901726dad48288af7",
+        "version": "f9a1fb151e7cb4658bd312a9d903741438a103793a84c15f0da6672a48e33693",
         "signature": "08042aaee4b53932f5c2d50f7396383c8ca2f18f1ee15dcf6aa0da0b8e06868c",
         "affectsGlobalScope": false
       },
@@ -3767,7 +3767,7 @@
         "affectsGlobalScope": false
       },
       "../src/rest/pizzas/pizzas.controller.ts": {
-        "version": "24ecf30ed79a1fa9cfd5ad67c135f79e38f63404599d888dca4d1de9f07aaad9",
+        "version": "b8405bee1a4c4ccb5ec496265628018711441399876ecf2563e03a4a4aa19d2f",
         "signature": "9df5625ff5d496c527a3d22b5eb67d29463937769993475695346b23beb5f261",
         "affectsGlobalScope": false
       },
@@ -4030,7 +4030,7 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/typeorm/index.d.ts"
       ],
-      "../migrations/1598198959086-addpizzadoubletypeentity.ts": [
+      "../migrations/1598204904192-addpizzanumerictypeentity.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11498,7 +11498,7 @@
       "../migrations/1598195970642-addpizzaentity.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
-      "../migrations/1598198959086-addpizzadoubletypeentity.ts": [
+      "../migrations/1598204904192-addpizzanumerictypeentity.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
