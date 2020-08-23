@@ -18,12 +18,13 @@ const configuration_1 = require("./config/configuration");
 const db_config_1 = require("./config/db.config");
 const static_config_1 = require("./config/static.config");
 const qs_middleware_1 = require("./middleware/qs.middleware");
+const pizzas_module_1 = require("./rest/pizzas/pizzas.module");
 let AppModule = (() => {
     let AppModule = class AppModule {
         configure(consumer) {
             consumer
                 .apply(qs_middleware_1.QuerySelectingMiddleware)
-                .forRoutes('users');
+                .forRoutes('users', 'pizzas');
         }
     };
     AppModule = __decorate([
@@ -33,7 +34,8 @@ let AppModule = (() => {
                 serve_static_1.ServeStaticModule.forRootAsync({ imports: [config_1.ConfigModule], useClass: static_config_1.StaticConfig }),
                 typeorm_1.TypeOrmModule.forRootAsync({ imports: [config_1.ConfigModule], useClass: db_config_1.DatabaseConfig }),
                 auth_module_1.AuthModule,
-                users_module_1.UsersModule
+                users_module_1.UsersModule,
+                pizzas_module_1.PizzasModule
             ],
             controllers: [app_controller_1.AppController]
         })

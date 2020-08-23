@@ -1436,6 +1436,16 @@
         "signature": "6d2b1f786e5a8d63b9a610782d4653c830feda0b253f131390d60240e5af0382",
         "affectsGlobalScope": false
       },
+      "../migrations/1598195970642-addpizzaentity.ts": {
+        "version": "dfeedbef3ef67e6ac43aca1889f1b8b2b7ac0676a35ff0ae2a54961897764393",
+        "signature": "9c7a638af5bd5667eea0496717b8232ab4f347a44905cdfd189fbfc692cb6831",
+        "affectsGlobalScope": false
+      },
+      "../migrations/1598204904192-addpizzanumerictypeentity.ts": {
+        "version": "6ff3e85bd087c22e94d9a740f01de2ee7077ce1c85703897cf6d6175d5dc8044",
+        "signature": "71556506c57be0042b6deb50897badfb7c97261e3cf66d12cd546c2218879457",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts": {
         "version": "3346a737f29b700e7c6c2a694973ceb70a738c3ac5212ffbefac8a27048fa8d6",
         "signature": "3346a737f29b700e7c6c2a694973ceb70a738c3ac5212ffbefac8a27048fa8d6",
@@ -3132,7 +3142,7 @@
         "affectsGlobalScope": false
       },
       "../src/entities/user.entity.ts": {
-        "version": "3b872206f0e915557e6331b6be133de40cb5026db6a35490780b24a7b5989fe3",
+        "version": "9a3c2e3de865201863b92e1111ea49ca0e0695640e12723d34d0c5e2441b278d",
         "signature": "a9ec025c0301147c96e2c9ef4681eec9f46a771ede914f4438bcd1ee3e153ce0",
         "affectsGlobalScope": false
       },
@@ -3741,8 +3751,33 @@
         "signature": "a2ecc5178833ad1ea643570eeadfc451d9ed666061bfb56e4b31c9ae96d3cf77",
         "affectsGlobalScope": false
       },
+      "../src/entities/pizza.entity.ts": {
+        "version": "f9a1fb151e7cb4658bd312a9d903741438a103793a84c15f0da6672a48e33693",
+        "signature": "08042aaee4b53932f5c2d50f7396383c8ca2f18f1ee15dcf6aa0da0b8e06868c",
+        "affectsGlobalScope": false
+      },
+      "../src/dto/create-pizza.dto.ts": {
+        "version": "19f9f83df7657ade45d96e7392621e81e390ded92f76265bec712ffdf3a01ac4",
+        "signature": "772c92e83ff3c7dd069eda41c9cf3b71e5427b659be1db5643ce6f02a6a9ad57",
+        "affectsGlobalScope": false
+      },
+      "../src/rest/pizzas/pizzas.service.ts": {
+        "version": "5ee495147d299f4d29b181af9542bd88a74dbc2ec8583af756c6d2c279c91251",
+        "signature": "c5c99d5817e7e38ade92c3e2838422ff22a35f4050136f3659d66e22c9ffab04",
+        "affectsGlobalScope": false
+      },
+      "../src/rest/pizzas/pizzas.controller.ts": {
+        "version": "24ecf30ed79a1fa9cfd5ad67c135f79e38f63404599d888dca4d1de9f07aaad9",
+        "signature": "9df5625ff5d496c527a3d22b5eb67d29463937769993475695346b23beb5f261",
+        "affectsGlobalScope": false
+      },
+      "../src/rest/pizzas/pizzas.module.ts": {
+        "version": "781aefa547f3c4d34f3d06d2f24ee98b8aaf27fba86ca71d27df8f9d5d962635",
+        "signature": "e980a20d7e4a782fa88846d9ed3cac4703c8d81e3e1fd5b4d48a3e4008c7c458",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "d91fbcb423f383dd903992dc4ec0e1b9d2347dd2bb99207b26d541da2b8d3f3f",
+        "version": "7821dea6e6b87924a5d165f4cc447520dd68947a69df919eb95fa311bcce6a98",
         "signature": "843f051400e86a3e4de923e5b7271bfa660bd889abf5fee0dce89d6ded83b42c",
         "affectsGlobalScope": false
       },
@@ -3980,6 +4015,22 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1597927166480-removebirthday.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598195970642-addpizzaentity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598204904192-addpizzanumerictypeentity.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11184,6 +11235,7 @@
         "../src/config/static.config.ts",
         "../src/middleware/qs.middleware.ts",
         "../src/rest/auth/auth.module.ts",
+        "../src/rest/pizzas/pizzas.module.ts",
         "../src/rest/users/users.module.ts"
       ],
       "../src/config/configuration.ts": [
@@ -11214,12 +11266,27 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
+      "../src/dto/create-pizza.dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../src/dto/create-user.dto.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/entities/pizza.entity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
       ],
       "../src/entities/user.entity.ts": [
         "../node_modules/@types/bcryptjs/index.d.ts",
@@ -11345,6 +11412,43 @@
         "../node_modules/@types/passport-local/index.d.ts",
         "../src/rest/auth/auth.service.ts"
       ],
+      "../src/rest/pizzas/pizzas.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/dto/create-pizza.dto.ts",
+        "../src/entities/pizza.entity.ts",
+        "../src/interceptors/qr.interceptor.ts",
+        "../src/rest/pizzas/pizzas.service.ts"
+      ],
+      "../src/rest/pizzas/pizzas.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/entities/pizza.entity.ts",
+        "../src/rest/pizzas/pizzas.controller.ts",
+        "../src/rest/pizzas/pizzas.service.ts"
+      ],
+      "../src/rest/pizzas/pizzas.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/dto/create-pizza.dto.ts",
+        "../src/entities/pizza.entity.ts"
+      ],
       "../src/rest/users/users.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/express/index.d.ts",
@@ -11389,6 +11493,12 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1597927166480-removebirthday.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598195970642-addpizzaentity.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598204904192-addpizzanumerictypeentity.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
@@ -18613,6 +18723,17 @@
       "../src/rest/auth/strategies/local.strategy.ts": [
         "../node_modules/@types/passport-local/index.d.ts",
         "../src/rest/auth/auth.service.ts"
+      ],
+      "../src/rest/pizzas/pizzas.controller.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../src/dto/create-pizza.dto.ts",
+        "../src/entities/pizza.entity.ts",
+        "../src/rest/pizzas/pizzas.service.ts"
+      ],
+      "../src/rest/pizzas/pizzas.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/dto/create-pizza.dto.ts",
+        "../src/entities/pizza.entity.ts"
       ],
       "../src/rest/users/users.controller.ts": [
         "../node_modules/@types/express/index.d.ts",

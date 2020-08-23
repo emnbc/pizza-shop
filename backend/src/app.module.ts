@@ -10,6 +10,7 @@ import { configuration } from './config/configuration';
 import { DatabaseConfig } from './config/db.config';
 import { StaticConfig } from './config/static.config';
 import { QuerySelectingMiddleware } from './middleware/qs.middleware';
+import { PizzasModule } from './rest/pizzas/pizzas.module';
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { QuerySelectingMiddleware } from './middleware/qs.middleware';
     ServeStaticModule.forRootAsync({ imports: [ConfigModule], useClass: StaticConfig }),
     TypeOrmModule.forRootAsync({ imports: [ConfigModule], useClass: DatabaseConfig }),
     AuthModule,
-    UsersModule
+    UsersModule,
+    PizzasModule
   ],
   controllers: [AppController]
 })
@@ -25,6 +27,6 @@ export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(QuerySelectingMiddleware)
-      .forRoutes('users');
+      .forRoutes('users', 'pizzas');
   }
 }
