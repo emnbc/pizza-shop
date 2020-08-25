@@ -6,4 +6,5 @@ export declare class PizzasService {
     constructor(pizzasRepository: Repository<Pizza>);
     create(pizzaData: CreatePizzaDto): Promise<any>;
     findAll(qs: QuerySelecting): Promise<QueryResult>;
+    findById(id: number): Promise<Pizza>;
 }

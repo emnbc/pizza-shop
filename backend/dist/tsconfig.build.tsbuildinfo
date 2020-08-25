@@ -1446,6 +1446,16 @@
         "signature": "71556506c57be0042b6deb50897badfb7c97261e3cf66d12cd546c2218879457",
         "affectsGlobalScope": false
       },
+      "../migrations/1598340161658-createorderandordersproduct.ts": {
+        "version": "be71b963841f4b83cff29dda3d6fb90c1875f8d014c667c0a66321dd42e6401e",
+        "signature": "023b72e0fddb2a354bed2805082a264da31cd2313c08dd2ec201fd5b991dea00",
+        "affectsGlobalScope": false
+      },
+      "../migrations/1598376236170-ramekeorderentity.ts": {
+        "version": "eda9bb153dbb4d9dd34daf4412be32ae671c033c3acf6474b2e3ae594deac131",
+        "signature": "c9dc973a99c550c9d85201166a7ba35a077ef91dc32a69a58692d117665f5b3f",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts": {
         "version": "3346a737f29b700e7c6c2a694973ceb70a738c3ac5212ffbefac8a27048fa8d6",
         "signature": "3346a737f29b700e7c6c2a694973ceb70a738c3ac5212ffbefac8a27048fa8d6",
@@ -3762,8 +3772,8 @@
         "affectsGlobalScope": false
       },
       "../src/rest/pizzas/pizzas.service.ts": {
-        "version": "5ee495147d299f4d29b181af9542bd88a74dbc2ec8583af756c6d2c279c91251",
-        "signature": "c5c99d5817e7e38ade92c3e2838422ff22a35f4050136f3659d66e22c9ffab04",
+        "version": "35518cf4412d28c63e7e218cfcf2755b20e950bc73e346957c93090deaa4350f",
+        "signature": "d2170107e67b3bf19ba9794857dc57fd332195f22e5ec130af0fb71572b98859",
         "affectsGlobalScope": false
       },
       "../src/rest/pizzas/pizzas.controller.ts": {
@@ -3776,8 +3786,38 @@
         "signature": "e980a20d7e4a782fa88846d9ed3cac4703c8d81e3e1fd5b4d48a3e4008c7c458",
         "affectsGlobalScope": false
       },
+      "../src/entities/order.entity.ts": {
+        "version": "4393e2cc8d38d9183703a800160cc3b7b013f5176bdf021f0514b98e299c8c90",
+        "signature": "8233b85dc55905a47ef458f124900443eb1149ff3acad619fd23bff4efb0a462",
+        "affectsGlobalScope": false
+      },
+      "../src/entities/orders-product.entity.ts": {
+        "version": "fd0ef4d73c6f0756ae3da726e8cd9159aa2f627d640ee1e971d7b03968cadd39",
+        "signature": "b6b88558c43d8de86ce01a68bb4653cc81edb9e2c29b666a3b16bde79f72afef",
+        "affectsGlobalScope": false
+      },
+      "../src/dto/create-order.dto.ts": {
+        "version": "dc53772dcb33d74299192ce48c5e9e77532e05d1ffa00baddae7ce1c56c59ff7",
+        "signature": "1aaf9b7fae847be16810d16f61502e445eb63d4e40bae9565562831a33d344dd",
+        "affectsGlobalScope": false
+      },
+      "../src/rest/orders/orders.service.ts": {
+        "version": "05005717dd7451f1df91f095366ccec1f41b3074fb854bd7ea5d63bd70d6075c",
+        "signature": "9053e3c3909e6060c0229889f55d8d6181145675434636a0bc8b1018cdde36d4",
+        "affectsGlobalScope": false
+      },
+      "../src/rest/orders/orders.controller.ts": {
+        "version": "ae24a9b342421b885548f66dc5f3a85eecfa97d516d0307872b8c70a6ad18aaf",
+        "signature": "6e82d81c6bfaa266a3cda36ab40daf96b9db624078fbb38bf7fd7244477dae93",
+        "affectsGlobalScope": false
+      },
+      "../src/rest/orders/orders.module.ts": {
+        "version": "fa969f06f63dad7a386bf82ee6093398e61cbf22cf1de6087feb1c19dca29da3",
+        "signature": "f2a098761374558eef78bc1c94d34464e78aba0b8a2a2b58cb009a7e88a54002",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "7821dea6e6b87924a5d165f4cc447520dd68947a69df919eb95fa311bcce6a98",
+        "version": "6938984f85b4a336ec3cca3395e01e9e7655bf9d1ca98ed903d5d950af0820c4",
         "signature": "843f051400e86a3e4de923e5b7271bfa660bd889abf5fee0dce89d6ded83b42c",
         "affectsGlobalScope": false
       },
@@ -4031,6 +4071,22 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1598204904192-addpizzanumerictypeentity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598340161658-createorderandordersproduct.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598376236170-ramekeorderentity.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11235,6 +11291,7 @@
         "../src/config/static.config.ts",
         "../src/middleware/qs.middleware.ts",
         "../src/rest/auth/auth.module.ts",
+        "../src/rest/orders/orders.module.ts",
         "../src/rest/pizzas/pizzas.module.ts",
         "../src/rest/users/users.module.ts"
       ],
@@ -11266,6 +11323,13 @@
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
       ],
+      "../src/dto/create-order.dto.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts"
+      ],
       "../src/dto/create-pizza.dto.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -11279,6 +11343,25 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts",
         "../node_modules/@types/node/util.d.ts"
+      ],
+      "../src/entities/order.entity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/orders-product.entity.ts"
+      ],
+      "../src/entities/orders-product.entity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/entities/order.entity.ts",
+        "../src/entities/pizza.entity.ts"
       ],
       "../src/entities/pizza.entity.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
@@ -11412,6 +11495,47 @@
         "../node_modules/@types/passport-local/index.d.ts",
         "../src/rest/auth/auth.service.ts"
       ],
+      "../src/rest/orders/orders.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/dto/create-order.dto.ts",
+        "../src/entities/order.entity.ts",
+        "../src/rest/orders/orders.service.ts"
+      ],
+      "../src/rest/orders/orders.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../src/entities/order.entity.ts",
+        "../src/entities/orders-product.entity.ts",
+        "../src/entities/pizza.entity.ts",
+        "../src/rest/orders/orders.controller.ts",
+        "../src/rest/orders/orders.service.ts",
+        "../src/rest/pizzas/pizzas.module.ts"
+      ],
+      "../src/rest/orders/orders.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/typeorm/index.d.ts",
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts",
+        "../src/dto/create-order.dto.ts",
+        "../src/entities/order.entity.ts",
+        "../src/entities/orders-product.entity.ts",
+        "../src/entities/pizza.entity.ts",
+        "../src/rest/pizzas/pizzas.service.ts"
+      ],
       "../src/rest/pizzas/pizzas.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@types/express/index.d.ts",
@@ -11499,6 +11623,12 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1598204904192-addpizzanumerictypeentity.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598340161658-createorderandordersproduct.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598376236170-ramekeorderentity.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
@@ -18685,6 +18815,13 @@
         "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@nestjs/serve-static/index.d.ts"
       ],
+      "../src/entities/order.entity.ts": [
+        "../src/entities/orders-product.entity.ts"
+      ],
+      "../src/entities/orders-product.entity.ts": [
+        "../src/entities/order.entity.ts",
+        "../src/entities/pizza.entity.ts"
+      ],
       "../src/index.d.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -18723,6 +18860,19 @@
       "../src/rest/auth/strategies/local.strategy.ts": [
         "../node_modules/@types/passport-local/index.d.ts",
         "../src/rest/auth/auth.service.ts"
+      ],
+      "../src/rest/orders/orders.controller.ts": [
+        "../src/dto/create-order.dto.ts",
+        "../src/entities/order.entity.ts",
+        "../src/rest/orders/orders.service.ts"
+      ],
+      "../src/rest/orders/orders.service.ts": [
+        "../node_modules/typeorm/index.d.ts",
+        "../src/dto/create-order.dto.ts",
+        "../src/entities/order.entity.ts",
+        "../src/entities/orders-product.entity.ts",
+        "../src/entities/pizza.entity.ts",
+        "../src/rest/pizzas/pizzas.service.ts"
       ],
       "../src/rest/pizzas/pizzas.controller.ts": [
         "../node_modules/@types/express/index.d.ts",

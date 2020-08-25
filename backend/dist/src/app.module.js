@@ -19,6 +19,7 @@ const db_config_1 = require("./config/db.config");
 const static_config_1 = require("./config/static.config");
 const qs_middleware_1 = require("./middleware/qs.middleware");
 const pizzas_module_1 = require("./rest/pizzas/pizzas.module");
+const orders_module_1 = require("./rest/orders/orders.module");
 let AppModule = (() => {
     let AppModule = class AppModule {
         configure(consumer) {
@@ -35,7 +36,8 @@ let AppModule = (() => {
                 typeorm_1.TypeOrmModule.forRootAsync({ imports: [config_1.ConfigModule], useClass: db_config_1.DatabaseConfig }),
                 auth_module_1.AuthModule,
                 users_module_1.UsersModule,
-                pizzas_module_1.PizzasModule
+                pizzas_module_1.PizzasModule,
+                orders_module_1.OrdersModule
             ],
             controllers: [app_controller_1.AppController]
         })
