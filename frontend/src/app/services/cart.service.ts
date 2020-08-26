@@ -49,8 +49,8 @@ export class CartService {
   }
 
   getCartFromStorage() {
-    const cart = localStorage.getItem('ps_cart');
-    this.cart$.next(JSON.parse(cart));
+    const cart = JSON.parse(localStorage.getItem('ps_cart'));
+    this.cart$.next(cart && Array.isArray(cart) && cart.length > 0 ? cart : []);
   }
 
 }
