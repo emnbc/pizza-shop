@@ -46,23 +46,11 @@ export class OrdersService {
             }));
         }
 
-        // orderData.products.forEach(async (el) => {
-        //     const pizza = this.pizzaRepository.create({id: el.product});
-        //     const price = await this.getPizzaPrice(el.product);
-        //     products.push(this.ordersProductRepository.create({
-        //         product: pizza,
-        //         quantity: el.quantity,
-        //         price: price
-        //     }));
-        // });
-
         try {
             await this.ordersProductRepository.save(products);
         } catch (err) {
             throw new InternalServerErrorException(err);
         }
-
-        console.log(products);
 
         const order = this.orderRepository.create({
             email: orderData.email,

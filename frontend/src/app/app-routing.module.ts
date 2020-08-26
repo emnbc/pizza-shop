@@ -20,6 +20,11 @@ const routes: Routes = [
     canLoad: [CheckAuthGuard]
   },
   {
+    path: 'cart',
+    loadChildren: () => import('./pages/cart/cart.module').then(m => m.CartModule),
+    canLoad: [CheckAuthGuard]
+  },
+  {
     path: 'sign-in',
     loadChildren: () => import('./pages/sign-in/sign-in.module').then(m => m.SignInModule),
     canLoad: [IsNotAuthGuard]

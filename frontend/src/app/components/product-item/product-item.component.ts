@@ -1,20 +1,17 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Pizza } from 'src/app/models/pizza.model';
 
 @Component({
   selector: 'product-item',
   templateUrl: './product-item.component.html',
   styleUrls: ['./product-item.component.scss']
 })
-export class ProductItemComponent implements OnInit {
+export class ProductItemComponent {
 
-  @Input() name: string;
-  @Input() description: string;
-  @Input() img: string;
-  @Input() price: number;
+  @Input() product: Pizza;
+  @Input() hideButton: boolean = false;
+  @Input() addMethod: (product: Pizza) => void;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
