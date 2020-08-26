@@ -11,6 +11,7 @@ import { DatabaseConfig } from './config/db.config';
 import { StaticConfig } from './config/static.config';
 import { QuerySelectingMiddleware } from './middleware/qs.middleware';
 import { PizzasModule } from './rest/pizzas/pizzas.module';
+import { OrdersModule } from './rest/orders/orders.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import { PizzasModule } from './rest/pizzas/pizzas.module';
     TypeOrmModule.forRootAsync({ imports: [ConfigModule], useClass: DatabaseConfig }),
     AuthModule,
     UsersModule,
-    PizzasModule
+    PizzasModule,
+    OrdersModule
   ],
   controllers: [AppController]
 })

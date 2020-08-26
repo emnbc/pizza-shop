@@ -1,0 +1,16 @@
+<h2>Cart</h2>
+<mat-card *ngFor="let item of cart" class="mb-4 cart-item">
+    <img class="cart-item__img" [src]="item.product.img" [alt]="item.product.name">
+    <div class="cart-item__description">
+        <h3>{{item.product.name}}</h3>
+        <p>
+            {{item.product.description}}
+        </p>
+    </div>
+    <div class="cart-item__control">
+        <adjuster   [value]="item.quantity"
+                    [id]="item.product.id"
+                    (outValue)="changeQuantity($event)"></adjuster>
+        <button class="w-100 mt-3" (click)="deleteFromCart(item)" mat-raised-button color="warn">Delete</button>
+    </div>
+</mat-card>

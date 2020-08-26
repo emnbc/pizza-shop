@@ -4,6 +4,7 @@ import { ReplaySubject } from 'rxjs'
 import { takeUntil } from 'rxjs/operators';
 
 import { AppService } from './services/app.service';
+import { CartService } from './services/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,10 @@ export class AppComponent implements OnInit {
 
   @ViewChild('snav') snav: MatSidenav;
 
-  constructor(private app: AppService) { }
+  constructor(
+    private app: AppService,
+    private cartService: CartService
+    ) { }
 
   ngOnInit() {
     this.detectMobile();
@@ -30,6 +34,7 @@ export class AppComponent implements OnInit {
       .subscribe(() => this.snav.toggle());
 
     this.app.menuShower.next(true);
+    this.cartService.getCartFromStorage();
   }
 
   @HostListener('window:resize', [])

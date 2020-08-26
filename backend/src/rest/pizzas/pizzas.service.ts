@@ -15,10 +15,10 @@ export class PizzasService {
 
     async create(pizzaData: CreatePizzaDto): Promise<any> {
 
-        const user = this.pizzasRepository.create(pizzaData);
+        const pizza = this.pizzasRepository.create(pizzaData);
     
         try {
-          return await this.pizzasRepository.save(user);
+          return await this.pizzasRepository.save(pizza);
         } catch (err) {
           throw new InternalServerErrorException();
         }
@@ -29,6 +29,10 @@ export class PizzasService {
           count: await this.pizzasRepository.count({ ...qs.where }),
           result: await this.pizzasRepository.find({ ...qs })
         };
+    }
+
+    async findById(id: number) {
+      return await this.pizzasRepository.findOne(id);
     }
 
 }

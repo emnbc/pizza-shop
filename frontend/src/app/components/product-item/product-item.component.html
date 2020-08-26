@@ -1,12 +1,15 @@
 <mat-card>
-    <img mat-card-image [src]="img" [alt]="name">
+    <img mat-card-image [src]="product.img" [alt]="product.name">
     <mat-card-content>
-      <h3>{{ name }}</h3>
-      <p>{{ description }}</p>
-      <h2>{{ price }} &euro;</h2>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <h2>{{ product.price }} &euro;</h2>
     </mat-card-content>
     <mat-card-actions>
-      <button class="w-100" mat-raised-button color="accent">Add to cart</button>
+      <button class="w-100"
+              mat-raised-button color="accent"
+              [disabled]="hideButton"
+              (click)="addMethod(product)">Add to cart</button>
     </mat-card-actions>
   </mat-card>
   

@@ -1,0 +1,25 @@
+.adjuster {
+    width: 100%;
+    display: flex;
+    &__minus {
+        flex: 1 1 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__counter {
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & h3 {
+            margin: 0;
+        }
+    }
+    &__plus {
+        flex: 1 1 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

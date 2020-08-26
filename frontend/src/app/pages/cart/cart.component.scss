@@ -1,0 +1,15 @@
+.cart-item {
+    display: flex;
+    &__img {
+        width: 130px;
+        height: 100px;
+        flex: 0 0 auto;
+        margin: 0px 12px 0px 0px;
+    }
+    &__description {
+        flex: 1 1 auto;
+    }
+    &__control {
+        flex: 0 0 100px;
+    }
+}

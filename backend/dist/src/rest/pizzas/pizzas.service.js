@@ -23,9 +23,9 @@ let PizzasService = (() => {
             this.pizzasRepository = pizzasRepository;
         }
         async create(pizzaData) {
-            const user = this.pizzasRepository.create(pizzaData);
+            const pizza = this.pizzasRepository.create(pizzaData);
             try {
-                return await this.pizzasRepository.save(user);
+                return await this.pizzasRepository.save(pizza);
             }
             catch (err) {
                 throw new common_1.InternalServerErrorException();
@@ -36,6 +36,9 @@ let PizzasService = (() => {
                 count: await this.pizzasRepository.count(Object.assign({}, qs.where)),
                 result: await this.pizzasRepository.find(Object.assign({}, qs))
             };
+        }
+        async findById(id) {
+            return await this.pizzasRepository.findOne(id);
         }
     };
     PizzasService = __decorate([

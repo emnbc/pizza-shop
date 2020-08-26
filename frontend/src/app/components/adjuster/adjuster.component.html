@@ -1,0 +1,15 @@
+<div class="adjuster">
+    <div class="adjuster__minus">
+        <button [disabled]="value <= 1" (click)="decrementValue()" mat-icon-button>
+            <mat-icon>remove</mat-icon>
+        </button>
+    </div>
+    <div class="adjuster__counter">
+        <h3>{{ value }}</h3>
+    </div>
+    <div class="adjuster__plus">
+        <button (click)="incrementValue()" mat-icon-button>
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</div>
