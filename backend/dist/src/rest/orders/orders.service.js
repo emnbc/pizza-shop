@@ -53,7 +53,6 @@ let OrdersService = (() => {
             catch (err) {
                 throw new common_1.InternalServerErrorException(err);
             }
-            console.log(products);
             const order = this.orderRepository.create({
                 email: orderData.email,
                 firstName: orderData.firstName,

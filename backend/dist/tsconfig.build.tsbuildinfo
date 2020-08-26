@@ -3802,7 +3802,7 @@
         "affectsGlobalScope": false
       },
       "../src/rest/orders/orders.service.ts": {
-        "version": "05005717dd7451f1df91f095366ccec1f41b3074fb854bd7ea5d63bd70d6075c",
+        "version": "348b56836844aad4e1631924b7c8a0dc54a1738d74b32548bf21fa72bc9d3cdd",
         "signature": "9053e3c3909e6060c0229889f55d8d6181145675434636a0bc8b1018cdde36d4",
         "affectsGlobalScope": false
       },
