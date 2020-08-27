@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatButtonToggleChange } from '@angular/material/button-toggle';
 
 import { HttpHelperService } from '../../services/http-helper.service';
 import { CartService } from '../../services/cart.service';
 import { Pizza } from '../../models/pizza.model';
 import { Order } from 'src/app/models/order.model';
+import { AppService, Currency } from '../../services/app.service';
 
 interface Food {
   value: string;
@@ -17,6 +19,9 @@ interface Food {
 })
 export class HomeComponent implements OnInit {
 
+  Currensy = Currency;
+  currencyState: Currency;
+
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},
     {value: 'pizza-1', viewValue: 'Pizza'},
@@ -28,9 +33,11 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private http: HttpHelperService,
-    private cartService: CartService
+    private cartService: CartService,
+    private app: AppService
   ) { 
     this.cartService.cart$.subscribe(cart => this.cart = cart);
+    this.app.currencyState$.subscribe(state => this.currencyState = state);
   }
 
   ngOnInit(): void {
@@ -48,6 +55,10 @@ export class HomeComponent implements OnInit {
       return el.product.id === product.id;
     });
     return result.length > 0 ? true : false;
+  }
+
+  changeCurrency(event: MatButtonToggleChange) {
+    this.app.currencyState$.next(event.value);
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Pizza } from 'src/app/models/pizza.model';
+import { Pizza } from '../../models/pizza.model';
+
+import { Currency } from '../../services/app.service';
 
 @Component({
   selector: 'product-item',
@@ -11,7 +13,6 @@ export class ProductItemComponent {
   @Input() product: Pizza;
   @Input() hideButton: boolean = false;
   @Input() addMethod: (product: Pizza) => void;
-
-  constructor() { }
+  @Input() currency: Currency;
 
 }

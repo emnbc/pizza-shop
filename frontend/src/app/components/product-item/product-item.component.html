@@ -3,7 +3,7 @@
     <mat-card-content>
       <h3>{{ product.name }}</h3>
       <p>{{ product.description }}</p>
-      <h2>{{ product.price }} &euro;</h2>
+      <h2>{{ product.price | price: currency }}</h2>
     </mat-card-content>
     <mat-card-actions>
       <button class="w-100"

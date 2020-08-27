@@ -1,16 +1,44 @@
 <h2>Cart</h2>
+<hr>
+<div class="d-flex justify-content-end">
+    <mat-button-toggle-group [ngModel]="currencyState" (change)="changeCurrency($event)" class="mb-4" name="currency" aria-label="Currency">
+        <mat-button-toggle [value]="Currensy.EURO">Euro</mat-button-toggle>
+        <mat-button-toggle [value]="Currensy.DOLLAR">Dollar</mat-button-toggle>
+    </mat-button-toggle-group>
+</div>
+
 <mat-card *ngFor="let item of cart" class="mb-4 cart-item">
     <img class="cart-item__img" [src]="item.product.img" [alt]="item.product.name">
-    <div class="cart-item__description">
-        <h3>{{item.product.name}}</h3>
-        <p>
-            {{item.product.description}}
-        </p>
-    </div>
-    <div class="cart-item__control">
-        <adjuster   [value]="item.quantity"
-                    [id]="item.product.id"
-                    (outValue)="changeQuantity($event)"></adjuster>
-        <button class="w-100 mt-3" (click)="deleteFromCart(item)" mat-raised-button color="warn">Delete</button>
+    <div class="cart-item__container">
+        <div class="cart-item__description">
+            <h3>{{item.product.name}}</h3>
+            <p>
+                {{item.product.description}}
+            </p>
+        </div>
+        <div class="cart-item__control">
+            <adjuster   [value]="item.quantity"
+                        [id]="item.product.id"
+                        (outValue)="changeQuantity($event)"></adjuster>
+            <button class="w-100 mt-3" (click)="deleteFromCart(item)" mat-raised-button color="warn">Delete</button>
+        </div>
+        <div class="cart-item__total-coast">
+            <h2>{{ (item.product.price*item.quantity) | price: currencyState }}</h2>
+        </div>
     </div>
 </mat-card>
+
+<p *ngIf="cart.length === 0" class="mb-4 cart-item d-flex justify-content-center">
+    Your cart is empty. Add pizza from&nbsp; <a routerLink="/home">menu</a>.
+</p>
+
+<div *ngIf="cart.length > 0">
+    <hr class="mt-5">
+    <div class="d-flex justify-content-end">
+        <h3 class="m-0">Сost of delivery: {{ (2.99) | price: currencyState }}</h3>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-end">
+        <h2>Total price: {{ getTotalPrice() | price: currencyState }}</h2>
+    </div>
+</div>
