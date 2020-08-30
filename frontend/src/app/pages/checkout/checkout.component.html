@@ -1,0 +1,47 @@
+<upper title="Ordering"></upper>
+<div *ngIf="!complete">
+    <div class="checkout row row-cols-1 row-cols-lg-2">
+        <div class="checkout__form col">
+            <h3>All fields is required</h3>
+            <form [formGroup]="orderFormGroup">
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Enter your email" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>First name</mat-label>
+                    <input matInput formControlName="firstName" placeholder="Enter your first name" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Last name</mat-label>
+                    <input matInput formControlName="lastName" placeholder="Enter your last name" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <input matInput formControlName="address" placeholder="Enter your address" required>
+                </mat-form-field>
+              </form>
+              <button (click)="goBack()" mat-raised-button class="mr-2">Back to Cart</button>
+              <button [disabled]="loading" (click)="submitForm()" mat-raised-button color="accent">
+                  <span *ngIf="!loading">Confirm</span>
+                  <span *ngIf="loading">Sending...</span>
+              </button>
+        </div>
+        <div class="checkout__cart col">
+            <mat-card>
+                <order [cart]="cart" [currency]="currencyState" [totalPrice]="getTotalPrice()" [mode]="'ORDER'"></order>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div *ngIf="complete">
+    <div class="complete-text text-center">
+        Your order is complete!<span *ngIf="!this.user.id"><br>If you want to see your orders history, you can register use {{ this.orderFormGroup.value.email }} email.</span>
+    </div>
+    <div class="text-center">
+        <a class="m-link" routerLink="/home" mat-raised-button color="primary">Go to home page</a>
+    </div>
+</div>

@@ -13,5 +13,5 @@ export declare class OrdersService {
     private getPizzaPrice;
     private getDeliveryPrice;
     create(orderData: CreateOrderDto): Promise<Order>;
-    find(): Promise<Order[]>;
+    findUserOrders(email: string): Promise<Order[]>;
 }

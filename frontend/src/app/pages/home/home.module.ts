@@ -5,7 +5,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { MaterialModule } from '../../shared/material.module';
 import { HomeComponent } from './home.component';
 import { ProductItemModule } from '../../components/product-item/product-item.module';
-
+import { UpperModule } from '../../components/upper/upper.module';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { ProductItemModule } from '../../components/product-item/product-item.mo
     HomeRoutingModule,
     SharedModule,
     MaterialModule,
-    ProductItemModule
+    ProductItemModule,
+    UpperModule
   ]
 })
 export class HomeModule { }

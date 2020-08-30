@@ -40,6 +40,10 @@ export class HeaderComponent {
     this.router.navigate(['/home']);
   }
 
+  goToProfile() {
+    this.router.navigate(['/profile']);
+  }
+
   menuSwitch() {
     this.app.menuSwicher.next();
   }

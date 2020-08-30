@@ -1456,6 +1456,16 @@
         "signature": "c9dc973a99c550c9d85201166a7ba35a077ef91dc32a69a58692d117665f5b3f",
         "affectsGlobalScope": false
       },
+      "../migrations/1598637268429-remakeordersproductentity.ts": {
+        "version": "425fc0f7bb2ec221aaeaa4de53c123539fc783146047089475d69fcb9bd092d4",
+        "signature": "9ed06c5937d3d28704bc86cb84a641bed7c4394897b8df4585455a405196898d",
+        "affectsGlobalScope": false
+      },
+      "../migrations/1598794824865-adddatetoorder.ts": {
+        "version": "df567f7aa7e326d3fe5cbb234896fd7d8937f7a289af95a16e6e018bb475521c",
+        "signature": "3cdd0ae4dbd2915b37022bb5d8062b16280559ac0d7c6d68e3b5d29afd5737f1",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts": {
         "version": "3346a737f29b700e7c6c2a694973ceb70a738c3ac5212ffbefac8a27048fa8d6",
         "signature": "3346a737f29b700e7c6c2a694973ceb70a738c3ac5212ffbefac8a27048fa8d6",
@@ -3787,12 +3797,12 @@
         "affectsGlobalScope": false
       },
       "../src/entities/order.entity.ts": {
-        "version": "4393e2cc8d38d9183703a800160cc3b7b013f5176bdf021f0514b98e299c8c90",
-        "signature": "8233b85dc55905a47ef458f124900443eb1149ff3acad619fd23bff4efb0a462",
+        "version": "08c489078d5dab01d8fd364927c8b9043f655ed3de25c767cc36346bb70d41e2",
+        "signature": "1a0de24555b99153334d79f782754f6f338d172d2bf20e30dbec86c5b3e5afe5",
         "affectsGlobalScope": false
       },
       "../src/entities/orders-product.entity.ts": {
-        "version": "fd0ef4d73c6f0756ae3da726e8cd9159aa2f627d640ee1e971d7b03968cadd39",
+        "version": "379159f3258421370253f935317d13c0e782bc3e3d5ce32b1603b4a18b7df5f9",
         "signature": "b6b88558c43d8de86ce01a68bb4653cc81edb9e2c29b666a3b16bde79f72afef",
         "affectsGlobalScope": false
       },
@@ -3802,13 +3812,13 @@
         "affectsGlobalScope": false
       },
       "../src/rest/orders/orders.service.ts": {
-        "version": "348b56836844aad4e1631924b7c8a0dc54a1738d74b32548bf21fa72bc9d3cdd",
-        "signature": "9053e3c3909e6060c0229889f55d8d6181145675434636a0bc8b1018cdde36d4",
+        "version": "d069df402deff999509ca1c18186491f4ed233fbd5f05b80287b511237cc2de6",
+        "signature": "3d03265d38a59c1f32343695df8e33de97fdb403bf07ba9b5fbd4059256edba2",
         "affectsGlobalScope": false
       },
       "../src/rest/orders/orders.controller.ts": {
-        "version": "ae24a9b342421b885548f66dc5f3a85eecfa97d516d0307872b8c70a6ad18aaf",
-        "signature": "6e82d81c6bfaa266a3cda36ab40daf96b9db624078fbb38bf7fd7244477dae93",
+        "version": "799fc99d141cf71227684e6f0424cd623b396cebe792acc604ba649df941d84b",
+        "signature": "b9b47d7de5fa5de135c9a8fa7678f4f7593e75c0fc55e70cd992337c001c2168",
         "affectsGlobalScope": false
       },
       "../src/rest/orders/orders.module.ts": {
@@ -4087,6 +4097,22 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1598376236170-ramekeorderentity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598637268429-remakeordersproductentity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598794824865-adddatetoorder.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11497,6 +11523,7 @@
       ],
       "../src/rest/orders/orders.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/express/index.d.ts",
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11504,6 +11531,8 @@
         "../node_modules/@types/node/util.d.ts",
         "../src/dto/create-order.dto.ts",
         "../src/entities/order.entity.ts",
+        "../src/entities/user.entity.ts",
+        "../src/rest/auth/guards/jwt-auth.guard.ts",
         "../src/rest/orders/orders.service.ts"
       ],
       "../src/rest/orders/orders.module.ts": [
@@ -11629,6 +11658,12 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1598376236170-ramekeorderentity.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598637268429-remakeordersproductentity.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598794824865-adddatetoorder.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
@@ -18862,6 +18897,7 @@
         "../src/rest/auth/auth.service.ts"
       ],
       "../src/rest/orders/orders.controller.ts": [
+        "../node_modules/@types/express/index.d.ts",
         "../src/dto/create-order.dto.ts",
         "../src/entities/order.entity.ts",
         "../src/rest/orders/orders.service.ts"

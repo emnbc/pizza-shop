@@ -1,21 +1,16 @@
-<h2>Menu</h2>
-<hr>
-<div class="d-flex justify-content-between">
-    <mat-form-field>
-        <mat-label>Sorting</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let food of foods" [value]="food.value">
-            {{food.viewValue}}
-          </mat-option>
-        </mat-select>
-    </mat-form-field>
-    
-    <mat-button-toggle-group [ngModel]="currencyState" (change)="changeCurrency($event)" class="mb-4" name="currency" aria-label="Currency">
-        <mat-button-toggle [value]="Currensy.EURO">Euro</mat-button-toggle>
-        <mat-button-toggle [value]="Currensy.DOLLAR">Dollar</mat-button-toggle>
-    </mat-button-toggle-group>
+<upper title="Menu"></upper>
+<mat-form-field>
+  <mat-label>Sorting</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div *ngIf="loading" class="d-flex justify-content-center">
+  <mat-spinner></mat-spinner>
 </div>
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+<div *ngIf="!loading" class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
     <div *ngFor="let pizza of pizzas" class="col mb-4">
       <product-item [product]="pizza"
                     [hideButton]="isConteins(pizza)"

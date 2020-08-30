@@ -24,5 +24,8 @@ export class Order {
 
   @Column({type: "real"})
   deliveryPrice: number;
+
+  @Column({type: "timestamp"})
+  date: string;
   
 }

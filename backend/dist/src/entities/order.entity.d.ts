@@ -7,4 +7,5 @@ export declare class Order {
     lastName: string;
     products: OrdersProduct[];
     deliveryPrice: number;
+    date: string;
 }

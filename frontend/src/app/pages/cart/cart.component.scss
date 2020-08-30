@@ -50,3 +50,9 @@
         justify-content: center;
     }
 }
+a.checkout-link {
+    &:hover {
+        text-decoration: none;
+    }
+    
+}

@@ -1,0 +1,35 @@
+<mat-list>
+    <mat-list-item *ngFor="let item of cart">
+        <div class="d-flex justify-content-between w-100">
+            <div>
+                <div mat-line>{{item.product.name}} <span class="ml-4">x{{item.quantity}}</span></div>
+                <div mat-line> {{item.product.description}} </div>
+            </div>
+            <div class="price-col">
+                <div mat-line>{{ (item.product.price*item.quantity) | price: currency }}</div>
+            </div>
+        </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <div class="d-flex justify-content-between w-100">
+            <div>
+                <div mat-line>Сost of delivery:</div>
+            </div>
+            <div class="price-col">
+                <div mat-line>{{ (2.99) | price: currency }}</div>
+            </div>
+        </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+        <div class="d-flex justify-content-between w-100">
+            <div>
+                <div mat-line>Total price:</div>
+            </div>
+            <div class="price-col">
+                <div mat-line>{{ totalPrice | price: currency }}</div>
+            </div>
+        </div>
+    </mat-list-item>
+</mat-list>
