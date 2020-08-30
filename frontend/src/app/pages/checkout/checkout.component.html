@@ -1,11 +1,4 @@
-<div class="d-flex justify-content-between align-items-center">
-    <h2 class="m-0">Ordering</h2>
-    <mat-button-toggle-group [ngModel]="currencyState" (change)="changeCurrency($event)" name="currency" aria-label="Currency">
-        <mat-button-toggle [value]="Currensy.EURO">Euro</mat-button-toggle>
-        <mat-button-toggle [value]="Currensy.DOLLAR">Dollar</mat-button-toggle>
-    </mat-button-toggle-group>
-</div>
-<hr>
+<upper title="Ordering"></upper>
 <div *ngIf="!complete">
     <div class="checkout row row-cols-1 row-cols-lg-2">
         <div class="checkout__form col">
@@ -31,52 +24,22 @@
                     <input matInput formControlName="address" placeholder="Enter your address" required>
                 </mat-form-field>
               </form>
-              <button (click)="submitForm()" mat-raised-button color="accent">Send</button>
+              <button (click)="goBack()" mat-raised-button class="mr-2">Back to Cart</button>
+              <button [disabled]="loading" (click)="submitForm()" mat-raised-button color="accent">
+                  <span *ngIf="!loading">Confirm</span>
+                  <span *ngIf="loading">Sending...</span>
+              </button>
         </div>
         <div class="checkout__cart col">
             <mat-card>
-                <mat-list>
-                    <mat-list-item *ngFor="let item of cart">
-                        <div class="d-flex justify-content-between w-100">
-                            <div>
-                                <div mat-line>{{item.product.name}} <span class="ml-4">x{{item.quantity}}</span></div>
-                                <div mat-line> {{item.product.description}} </div>
-                            </div>
-                            <div class="price-col">
-                                <div mat-line>{{ (item.product.price*item.quantity) | price: currencyState }}</div>
-                            </div>
-                        </div>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>
-                        <div class="d-flex justify-content-between w-100">
-                            <div>
-                                <div mat-line>Сost of delivery:</div>
-                            </div>
-                            <div class="price-col">
-                                <div mat-line>{{ (2.99) | price: currencyState }}</div>
-                            </div>
-                        </div>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item>
-                        <div class="d-flex justify-content-between w-100">
-                            <div>
-                                <div mat-line>Total price:</div>
-                            </div>
-                            <div class="price-col">
-                                <div mat-line>{{ getTotalPrice() | price: currencyState }}</div>
-                            </div>
-                        </div>
-                    </mat-list-item>
-                </mat-list>
+                <order [cart]="cart" [currency]="currencyState" [totalPrice]="getTotalPrice()" [mode]="'ORDER'"></order>
             </mat-card>
         </div>
     </div>
 </div>
 <div *ngIf="complete">
     <div class="complete-text text-center">
-        Your order is complete. If you want to see your orders history, you can register use {{ this.orderFormGroup.value.email }} email.
+        Your order is complete!<span *ngIf="!this.user.id"><br>If you want to see your orders history, you can register use {{ this.orderFormGroup.value.email }} email.</span>
     </div>
     <div class="text-center">
         <a class="m-link" routerLink="/home" mat-raised-button color="primary">Go to home page</a>

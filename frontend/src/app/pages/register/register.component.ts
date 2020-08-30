@@ -39,8 +39,8 @@ export class RegisterComponent implements OnInit {
       this.http.create('users', this.registerFormGroup.value).subscribe((res) => {
         this.openSnackBar('Success!');
         setTimeout(() => {
-          this.loading = false;
           this.router.navigate(['/sign-in']);
+          this.loading = false;
         }, 1000)
         console.log("OK", res);
       },(err) => {

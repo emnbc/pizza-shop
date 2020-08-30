@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrdersController = void 0;
 const common_1 = require("@nestjs/common");
+const jwt_auth_guard_1 = require("../auth/guards/jwt-auth.guard");
 const orders_service_1 = require("./orders.service");
 const create_order_dto_1 = require("../../dto/create-order.dto");
 let OrdersController = (() => {
@@ -24,8 +25,8 @@ let OrdersController = (() => {
         create(orderData) {
             return this.ordersService.create(orderData);
         }
-        find() {
-            return this.ordersService.find();
+        find(req) {
+            return this.ordersService.findUserOrders(req.user.email);
         }
     };
     __decorate([
@@ -37,8 +38,10 @@ let OrdersController = (() => {
     ], OrdersController.prototype, "create", null);
     __decorate([
         common_1.Get(),
+        common_1.UseGuards(jwt_auth_guard_1.JwtAuthGuard),
+        __param(0, common_1.Req()),
         __metadata("design:type", Function),
-        __metadata("design:paramtypes", []),
+        __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], OrdersController.prototype, "find", null);
     OrdersController = __decorate([

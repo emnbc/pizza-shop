@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   Currensy = Currency;
   currencyState: Currency;
+  loading: boolean = false;
 
   foods: Food[] = [
     {value: 'steak-0', viewValue: 'Steak'},
@@ -41,9 +42,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.find<Pizza[]>("pizzas").subscribe((res) => {
-      this.pizzas = res.body;
-    });
+    this.getPizza();
   }
 
   addToCart(product: Pizza): void {
@@ -55,6 +54,16 @@ export class HomeComponent implements OnInit {
       return el.product.id === product.id;
     });
     return result.length > 0 ? true : false;
+  }
+
+  getPizza() {
+    this.loading = true;
+    this.http.find<Pizza[]>("pizzas").subscribe((res) => {
+      this.pizzas = res.body;
+      this.loading = false;
+    }, () => {
+      this.loading = false;
+    });
   }
 
   changeCurrency(event: MatButtonToggleChange) {

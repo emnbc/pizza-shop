@@ -32,7 +32,14 @@ export class SignInComponent {
     this.http.login(this.authData).subscribe(res => {
       if(res.accessToken) {
         this.auth.setTokenToStorage(res.accessToken);
-        this.router.navigate(['/']);
+        this.http.find<User>('auth/me').subscribe(res => {
+          this.auth.user$.next(new User(res.body));
+          this.loading = false;
+          this.router.navigate(['/profile']);
+        }, () => {
+          this.error = true;
+          this.loading = false;
+        });
       } else {
         this.error = true;
       }

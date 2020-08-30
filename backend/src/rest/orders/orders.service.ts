@@ -58,7 +58,8 @@ export class OrdersService {
             lastName: orderData.lastName,
             address: orderData.address,
             products: products,
-            deliveryPrice: this.getDeliveryPrice()
+            deliveryPrice: this.getDeliveryPrice(),
+            date: new Date().toISOString()
         });
 
         try {
@@ -69,8 +70,8 @@ export class OrdersService {
 
     }
 
-    async find(): Promise<Order[]> {
-        return await this.orderRepository.find({relations: ["products", "products.product"]});
+    async findUserOrders(email: string): Promise<Order[]> {
+        return await this.orderRepository.find({relations: ["products", "products.product"], where: { email: email }});
     }
 
 }

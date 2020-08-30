@@ -1,11 +1,12 @@
-import { OrdersProduct } from './orders-product.entity';
-export declare class Order {
+import { Order } from './order.model';
+
+export class Purchase {
     id: number;
     email: string;
     address: string;
     firstName: string;
     lastName: string;
-    products: OrdersProduct[];
     deliveryPrice: number;
     date: string;
+    products: Order[];
 }

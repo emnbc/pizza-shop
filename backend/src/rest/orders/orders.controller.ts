@@ -1,8 +1,11 @@
-import { Controller, Post, Get, Body } from '@nestjs/common';
+import { Controller, Post, Get, Body, Req, UseGuards } from '@nestjs/common';
+import { Request } from 'express';
 
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard'
 import { OrdersService } from './orders.service';
 import { CreateOrderDto } from '../../dto/create-order.dto';
 import { Order } from '../../entities/order.entity';
+import { User } from '../../entities/user.entity';
 
 @Controller('orders')
 export class OrdersController {
@@ -17,8 +20,9 @@ export class OrdersController {
     }
 
     @Get()
-    find() {
-        return this.ordersService.find();
+    @UseGuards(JwtAuthGuard)
+    find(@Req() req: Request) {
+        return this.ordersService.findUserOrders((req.user as User).email);
     }
 
 }

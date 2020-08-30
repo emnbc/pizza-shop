@@ -43,6 +43,10 @@ let Order = (() => {
         typeorm_1.Column({ type: "real" }),
         __metadata("design:type", Number)
     ], Order.prototype, "deliveryPrice", void 0);
+    __decorate([
+        typeorm_1.Column({ type: "timestamp" }),
+        __metadata("design:type", String)
+    ], Order.prototype, "date", void 0);
     Order = __decorate([
         typeorm_1.Entity()
     ], Order);

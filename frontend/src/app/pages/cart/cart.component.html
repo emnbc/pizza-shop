@@ -1,12 +1,4 @@
-<h2>Cart</h2>
-<hr>
-<div class="d-flex justify-content-end">
-    <mat-button-toggle-group [ngModel]="currencyState" (change)="changeCurrency($event)" class="mb-4" name="currency" aria-label="Currency">
-        <mat-button-toggle [value]="Currensy.EURO">Euro</mat-button-toggle>
-        <mat-button-toggle [value]="Currensy.DOLLAR">Dollar</mat-button-toggle>
-    </mat-button-toggle-group>
-</div>
-
+<upper title="Cart"></upper>
 <mat-card *ngFor="let item of cart" class="mb-4 cart-item">
     <img class="cart-item__img" [src]="item.product.img" [alt]="item.product.name">
     <div class="cart-item__container">
@@ -28,8 +20,8 @@
     </div>
 </mat-card>
 
-<p *ngIf="cart.length === 0" class="mb-4 cart-item d-flex justify-content-center">
-    Your cart is empty. Add pizza from&nbsp; <a routerLink="/home">menu</a>.
+<p *ngIf="cart.length === 0" class="mb-4 mt-5 cart-item d-flex justify-content-center">
+    <span>Your cart is empty. Add pizza from <a routerLink="/home">menu</a>.</span>
 </p>
 
 <div *ngIf="cart.length > 0">
@@ -42,6 +34,6 @@
         <h2>Total price: {{ getTotalPrice() | price: currencyState }}</h2>
     </div>
     <div class="d-flex justify-content-end">
-        <a class="m-link" mat-raised-button color="warn" routerLink="/checkout">Checkout</a>
+        <a class="m-link" mat-raised-button color="accent" routerLink="/checkout">Checkout</a>
     </div>
 </div>

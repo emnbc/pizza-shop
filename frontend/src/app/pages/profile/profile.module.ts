@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import { ProfileComponent } from './profile.component';
+import { ProfileRoutingModule } from './profile-routing.module';
+import { SharedModule } from '../../shared/shared.module';
+import { MaterialModule } from '../../shared/material.module';
+import { OrderModule } from '../../components/order/order.module';
+import { UpperModule } from '../../components/upper/upper.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ProfileComponent],
   imports: [
-    CommonModule
+    SharedModule,
+    MaterialModule,
+    ProfileRoutingModule,
+    OrderModule,
+    UpperModule
   ]
 })
 export class ProfileModule { }

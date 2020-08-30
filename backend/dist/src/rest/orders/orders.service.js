@@ -59,7 +59,8 @@ let OrdersService = (() => {
                 lastName: orderData.lastName,
                 address: orderData.address,
                 products: products,
-                deliveryPrice: this.getDeliveryPrice()
+                deliveryPrice: this.getDeliveryPrice(),
+                date: new Date().toISOString()
             });
             try {
                 return await this.orderRepository.save(order);
@@ -68,8 +69,8 @@ let OrdersService = (() => {
                 throw new common_1.InternalServerErrorException(err);
             }
         }
-        async find() {
-            return await this.orderRepository.find({ relations: ["products", "products.product"] });
+        async findUserOrders(email) {
+            return await this.orderRepository.find({ relations: ["products", "products.product"], where: { email: email } });
         }
     };
     OrdersService = __decorate([
