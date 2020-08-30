@@ -20,8 +20,14 @@
                 <mat-error *ngIf="passwordControl.invalid">Please enter at least 3 characters</mat-error>
             </mat-form-field>
 
+            <div class="login-container__register">
+                <span>
+                    Don’t have an account yet? <a routerLink="/register">Register</a>
+                </span>
+            </div>
+
             <div class="login-container__field">
-                <button [disabled]="loading" mat-flat-button color="accent" (click)="login()">
+                <button [disabled]="loading" mat-flat-button color="accent" (click)="login()" class="w-100">
                     <span *ngIf="loading">Processing...</span>
                     <span *ngIf="!loading">Login</span>
                 </button>

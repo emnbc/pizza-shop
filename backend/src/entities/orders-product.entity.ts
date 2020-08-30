@@ -11,8 +11,7 @@ export class OrdersProduct {
   @ManyToOne(type => Order, order => order.products)
   order: Order;
 
-  @OneToOne(typy => Pizza)
-  @JoinColumn()
+  @ManyToOne(typy => Pizza)
   product: Pizza;
 
   @Column()

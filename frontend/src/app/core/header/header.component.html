@@ -12,11 +12,14 @@
                   Example with a home icon with overlaid badge showing the number 15
                 </span>
             </a>
-            <button *ngIf="user.id" mat-button [matMenuTriggerFor]="menu" aria-label="Profile">
+            <button *ngIf="user.id; else notAuth" mat-button [matMenuTriggerFor]="menu" aria-label="Profile">
                 <mat-icon class="margin-right">account_box</mat-icon>
                 <span>{{ user.firstName }}</span>
                 <mat-icon>keyboard_arrow_down</mat-icon>
             </button>
+            <ng-template #notAuth>
+                <a mat-button routerLink="/sign-in">Login</a>
+            </ng-template>
             <mat-menu #menu="matMenu" xPosition="before">
                 <button mat-menu-item>
                     <mat-icon>account_circle</mat-icon>

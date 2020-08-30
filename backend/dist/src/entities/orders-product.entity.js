@@ -25,8 +25,7 @@ let OrdersProduct = (() => {
         __metadata("design:type", order_entity_1.Order)
     ], OrdersProduct.prototype, "order", void 0);
     __decorate([
-        typeorm_1.OneToOne(typy => pizza_entity_1.Pizza),
-        typeorm_1.JoinColumn(),
+        typeorm_1.ManyToOne(typy => pizza_entity_1.Pizza),
         __metadata("design:type", pizza_entity_1.Pizza)
     ], OrdersProduct.prototype, "product", void 0);
     __decorate([

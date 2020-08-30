@@ -1456,6 +1456,11 @@
         "signature": "c9dc973a99c550c9d85201166a7ba35a077ef91dc32a69a58692d117665f5b3f",
         "affectsGlobalScope": false
       },
+      "../migrations/1598637268429-remakeordersproductentity.ts": {
+        "version": "425fc0f7bb2ec221aaeaa4de53c123539fc783146047089475d69fcb9bd092d4",
+        "signature": "9ed06c5937d3d28704bc86cb84a641bed7c4394897b8df4585455a405196898d",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@nestjs/common/cache/cache.constants.d.ts": {
         "version": "3346a737f29b700e7c6c2a694973ceb70a738c3ac5212ffbefac8a27048fa8d6",
         "signature": "3346a737f29b700e7c6c2a694973ceb70a738c3ac5212ffbefac8a27048fa8d6",
@@ -3792,7 +3797,7 @@
         "affectsGlobalScope": false
       },
       "../src/entities/orders-product.entity.ts": {
-        "version": "fd0ef4d73c6f0756ae3da726e8cd9159aa2f627d640ee1e971d7b03968cadd39",
+        "version": "379159f3258421370253f935317d13c0e782bc3e3d5ce32b1603b4a18b7df5f9",
         "signature": "b6b88558c43d8de86ce01a68bb4653cc81edb9e2c29b666a3b16bde79f72afef",
         "affectsGlobalScope": false
       },
@@ -4087,6 +4092,14 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1598376236170-ramekeorderentity.ts": [
+        "../node_modules/@types/graceful-fs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598637268429-remakeordersproductentity.ts": [
         "../node_modules/@types/graceful-fs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -11629,6 +11642,9 @@
         "../node_modules/typeorm/index.d.ts"
       ],
       "../migrations/1598376236170-ramekeorderentity.ts": [
+        "../node_modules/typeorm/index.d.ts"
+      ],
+      "../migrations/1598637268429-remakeordersproductentity.ts": [
         "../node_modules/typeorm/index.d.ts"
       ],
       "../node_modules/@babel/parser/typings/babel-parser.d.ts": [
