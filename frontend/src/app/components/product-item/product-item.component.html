@@ -2,7 +2,7 @@
     <img mat-card-image [src]="product.img" [alt]="product.name">
     <mat-card-content>
       <h3>{{ product.name }}</h3>
-      <p>{{ product.description }}</p>
+      <p class="description-product">{{ product.description }}</p>
       <h2>{{ product.price | price: currency }}</h2>
     </mat-card-content>
     <mat-card-actions>

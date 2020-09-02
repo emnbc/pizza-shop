@@ -20,12 +20,6 @@
         </mat-form-field>
         <br>
         <mat-form-field class="register__field" appearance="fill">
-            <mat-label>Address</mat-label>
-            <input matInput formControlName="address" placeholder="Enter your address" required>
-            <mat-error *ngIf="registerFormGroup.controls['address'].invalid">Please enter at least 3 characters</mat-error>
-        </mat-form-field>
-        <br>
-        <mat-form-field class="register__field" appearance="fill">
             <mat-label>Enter password</mat-label>
             <input matInput type="password" autocomplete="off" formControlName="password" placeholder="Enter password" required>
             <mat-error *ngIf="registerFormGroup.controls['password'].invalid">Please enter at least 3 characters</mat-error>

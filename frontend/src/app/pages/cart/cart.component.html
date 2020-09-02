@@ -12,7 +12,7 @@
             <adjuster   [value]="item.quantity"
                         [id]="item.product.id"
                         (outValue)="changeQuantity($event)"></adjuster>
-            <button class="w-100 mt-3" (click)="deleteFromCart(item)" mat-raised-button color="warn">Delete</button>
+            <button class="w-100 mt-3" (click)="deleteFromCart(item)" mat-raised-button color="warn"><mat-icon>delete</mat-icon>Remove</button>
         </div>
         <div class="cart-item__total-coast">
             <h2>{{ (item.product.price*item.quantity) | price: currencyState }}</h2>
