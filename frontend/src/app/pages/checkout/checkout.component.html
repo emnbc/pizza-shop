@@ -1,8 +1,8 @@
 <upper title="Ordering"></upper>
 <div *ngIf="!complete">
-    <div class="checkout row row-cols-1 row-cols-lg-2">
+    <div class="checkout row flex-column-reverse flex-md-row">
         <div class="checkout__form col">
-            <h3>All fields is required</h3>
+            <p>Fill out the form to deliver your order. All fields is required.</p>
             <form [formGroup]="orderFormGroup">
                 <mat-form-field appearance="fill">
                     <mat-label>Email</mat-label>
@@ -30,7 +30,7 @@
                   <span *ngIf="loading">Sending...</span>
               </button>
         </div>
-        <div class="checkout__cart col">
+        <div class="checkout__cart col mb-5">
             <mat-card>
                 <order [cart]="cart" [currency]="currencyState" [totalPrice]="getTotalPrice()" [mode]="'ORDER'"></order>
             </mat-card>

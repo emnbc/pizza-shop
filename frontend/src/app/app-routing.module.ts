@@ -12,11 +12,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'welcome',
-    loadChildren: () => import('./pages/welcome/welcome.module').then(m => m.WelcomeModule),
-    canLoad: [IsNotAuthGuard]
-  },
-  {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
     canLoad: [CheckAuthGuard]

@@ -1,13 +1,13 @@
 <upper title="Menu"></upper>
 <mat-form-field>
   <mat-label>Sorting</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
+  <mat-select [(value)]="selectedSort" (selectionChange)="changeSort($event)">
+    <mat-option *ngFor="let item of sort" [value]="item.value">
+      {{item.viewValue}}
     </mat-option>
   </mat-select>
 </mat-form-field>
-<div *ngIf="loading" class="d-flex justify-content-center">
+<div *ngIf="loading" class="d-flex justify-content-center m-4">
   <mat-spinner></mat-spinner>
 </div>
 <div *ngIf="!loading" class="row row-cols-1 row-cols-md-2 row-cols-lg-4">

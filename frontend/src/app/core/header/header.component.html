@@ -18,7 +18,9 @@
                 <mat-icon>keyboard_arrow_down</mat-icon>
             </button>
             <ng-template #notAuth>
-                <a mat-button routerLink="/sign-in">Login</a>
+                <a mat-button routerLink="/sign-in">
+                    <mat-icon>login</mat-icon> Login
+                </a>
             </ng-template>
             <mat-menu #menu="matMenu" xPosition="before">
                 <button mat-menu-item (click)="goToProfile()">

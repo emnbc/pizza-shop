@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
+import { MatSelectChange } from '@angular/material/select';
 
-import { HttpHelperService } from '../../services/http-helper.service';
+import { HttpHelperService, Param } from '../../services/http-helper.service';
 import { CartService } from '../../services/cart.service';
 import { Pizza } from '../../models/pizza.model';
 import { Order } from 'src/app/models/order.model';
 import { AppService, Currency } from '../../services/app.service';
 
-interface Food {
+interface Sort {
   value: string;
   viewValue: string;
 }
@@ -23,11 +24,12 @@ export class HomeComponent implements OnInit {
   currencyState: Currency;
   loading: boolean = false;
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+  sort: Sort[] = [
+    {value: 'id,asc', viewValue: 'Default'},
+    {value: 'price,asc', viewValue: 'Price: Low to High'},
+    {value: 'price,desc', viewValue: 'Price: High to Low'}
   ];
+  selectedSort = this.sort[0].value;
 
   pizzas: Pizza[] = [];
   cart: Order[] = [];
@@ -42,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getPizza();
+    this.getPizza('id,asc');
   }
 
   addToCart(product: Pizza): void {
@@ -56,14 +58,23 @@ export class HomeComponent implements OnInit {
     return result.length > 0 ? true : false;
   }
 
-  getPizza() {
+  getPizza(sort: string) {
     this.loading = true;
-    this.http.find<Pizza[]>("pizzas").subscribe((res) => {
+
+    const params: Param[] = [
+      {key: 'sort', value: sort}
+    ];
+
+    this.http.find<Pizza[]>("pizzas", params).subscribe((res) => {
       this.pizzas = res.body;
       this.loading = false;
     }, () => {
       this.loading = false;
     });
+  }
+
+  changeSort(e: MatSelectChange) {
+    this.getPizza(e.value);
   }
 
   changeCurrency(event: MatButtonToggleChange) {
