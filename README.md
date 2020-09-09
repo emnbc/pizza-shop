@@ -46,3 +46,9 @@ From frontend directory run `npm i` and after run `npm run build`
 From backend directory run `npm i` and after run `npm run start`
 
 Navigate to `http://localhost:3020/`.
+
+## Migration
+
+From backend directory run `npm run migration:generate -n <name-migration>` to generate migration
+
+From backend directory run `npm run migration:up` to up migration or `npm run migration:down` to down
