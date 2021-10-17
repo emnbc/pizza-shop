@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://localhost:3020",
+    "target": "http://pizzashop.emnbc.com",
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
