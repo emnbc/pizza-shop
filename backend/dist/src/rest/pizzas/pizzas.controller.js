@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PizzasController = void 0;
 const common_1 = require("@nestjs/common");
+const fs_1 = require("fs");
 const create_pizza_dto_1 = require("../../dto/create-pizza.dto");
 const pizzas_service_1 = require("./pizzas.service");
 const qr_interceptor_1 = require("../../interceptors/qr.interceptor");
@@ -27,6 +28,18 @@ let PizzasController = (() => {
         }
         findAll(req) {
             return this.pizzasService.findAll(req.qs);
+        }
+        async download(res) {
+            if (fs_1.existsSync('uploads/pizza_01.jpg')) {
+                res.set({
+                    'Content-Type': 'image/jpeg'
+                });
+                const stream = fs_1.createReadStream('uploads/pizza_01.jpg');
+                stream.pipe(res);
+            }
+            else {
+                throw new common_1.HttpException('Not Found', common_1.HttpStatus.NOT_FOUND);
+            }
         }
     };
     __decorate([
@@ -44,6 +57,13 @@ let PizzasController = (() => {
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", Promise)
     ], PizzasController.prototype, "findAll", null);
+    __decorate([
+        common_1.Get('/image'),
+        __param(0, common_1.Res()),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", Promise)
+    ], PizzasController.prototype, "download", null);
     PizzasController = __decorate([
         common_1.Controller('pizzas'),
         __metadata("design:paramtypes", [pizzas_service_1.PizzasService])
