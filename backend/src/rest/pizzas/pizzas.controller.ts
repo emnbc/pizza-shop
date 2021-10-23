@@ -1,5 +1,6 @@
-import { Body, Controller, Get, Post, Req, UseInterceptors } from '@nestjs/common';
-import { Request } from 'express';
+import { Body, Controller, Get, Header, HttpException, HttpStatus, Post, Req, Res, UseInterceptors } from '@nestjs/common';
+import { createReadStream, existsSync } from 'fs';
+import { Request, Response } from 'express';
 
 import { Pizza } from '../../entities/pizza.entity';
 import { CreatePizzaDto } from '../../dto/create-pizza.dto';
@@ -22,5 +23,18 @@ export class PizzasController {
     @Get()
     findAll(@Req() req: Request): Promise<any> {
       return this.pizzasService.findAll(req.qs);
+    }
+
+    @Get('/image')
+    async download(@Res() res: Response): Promise<any> {
+      if (existsSync('uploads/pizza_01.jpg')) {
+        res.set({
+          'Content-Type': 'image/jpeg'
+        });
+        const stream = createReadStream('uploads/pizza_01.jpg');
+        stream.pipe(res);
+      } else {
+        throw new HttpException('Not Found', HttpStatus.NOT_FOUND);
+      }
     }
 }
